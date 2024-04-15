@@ -1,6 +1,5 @@
 public class Info {
     public static void main(String[] args) {
-        // Thông tin cá nhân
         String name = "Phan Hoang Dung";
         String msv = "23020346";
         String classroom = "K68_AI2";
