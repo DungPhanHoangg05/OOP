@@ -149,7 +149,7 @@ public class Algorithm {
 				}
 			}
 
-			int t;
+			int t = -1;
 
 			if ((t = checkRectX(p1, p2)) != -1) {
 				return new Line(new Point(p1.x, t), new Point(p2.x, t));
