@@ -190,7 +190,7 @@ public class Algorithm {
 
 		Random rand = new Random();
 		int imgNumber = 28;
-		int maxDouble = imgNumber / 4;
+		int maxAppear = 8;
 		int imgArr[] = new int[imgNumber + 1];
 		ArrayList<Point> listPoint = new ArrayList<Point>();
 		for (int i = 1; i < row - 1; i++) {
@@ -201,7 +201,7 @@ public class Algorithm {
 		int i = 0;
 		do {
 			int imgIndex = rand.nextInt(imgNumber) + 1;
-			if (imgArr[imgIndex] < maxDouble) {
+			if (imgArr[imgIndex] < maxAppear) {
 				imgArr[imgIndex] += 2;
 				for (int j = 0; j < 2; j++) {
 					try {
