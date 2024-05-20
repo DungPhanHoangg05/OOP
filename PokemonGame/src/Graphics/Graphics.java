@@ -61,7 +61,7 @@ public class Graphics extends JPanel implements ActionListener {
 	}
 
 	private Icon getIcon(int index) {
-		int width = 48, height = 48;
+		int width = 50, height = 50;
 		Image image = new ImageIcon(getClass().getResource("/image/" + index + ".png")).getImage();
 		Icon icon = new ImageIcon(image.getScaledInstance(width, height, Image.SCALE_SMOOTH));
 		return icon;
