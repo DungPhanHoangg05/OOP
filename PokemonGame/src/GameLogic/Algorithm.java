@@ -179,8 +179,8 @@ public class Algorithm {
 	}
 
 	private void createMatrix() {
-
 		matrix = new int[row][col];
+
 		for (int i = 0; i < col; i++) {
 			matrix[0][i] = matrix[row - 1][i] = 0;
 		}
@@ -191,31 +191,36 @@ public class Algorithm {
 		Random rand = new Random();
 		int imgNumber = 28;
 		int maxAppear = 8;
-		int imgArr[] = new int[imgNumber + 1];
+		int[] imgArr = new int[imgNumber + 1];
 		ArrayList<Point> listPoint = new ArrayList<Point>();
+
 		for (int i = 1; i < row - 1; i++) {
 			for (int j = 1; j < col - 1; j++) {
 				listPoint.add(new Point(i, j));
 			}
 		}
+
 		int i = 0;
-		do {
+		while (i < row * col / 2) {
 			int imgIndex = rand.nextInt(imgNumber) + 1;
+
 			if (imgArr[imgIndex] < maxAppear) {
 				imgArr[imgIndex] += 2;
-				for (int j = 0; j < 2; j++) {
-					try {
-						int size = listPoint.size();
-						int pointIndex = rand.nextInt(size);
-						matrix[listPoint.get(pointIndex).x][listPoint.get(pointIndex).y] = imgIndex;
-						listPoint.remove(pointIndex);
-					} catch (Exception e) {
 
+				for (int j = 0; j < 2; j++) {
+					int size = listPoint.size();
+
+					if (size > 0) {
+						int pointIndex = rand.nextInt(size);
+						Point point = listPoint.get(pointIndex);
+
+						matrix[point.x][point.y] = imgIndex;
+						listPoint.remove(pointIndex);
 					}
 				}
 				i++;
 			}
-		} while (i < row * col / 2);
+		}
 	}
 
 	public Point[] findHint() {
