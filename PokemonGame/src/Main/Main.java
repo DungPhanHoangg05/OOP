@@ -15,7 +15,7 @@ public class Main {
 		PlayAudio.play("src/audio/musicbackground.wav", true);
 	}
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) {
 		new Main();
 	}
 
